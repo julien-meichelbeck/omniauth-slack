@@ -11,7 +11,8 @@ module OmniAuth
 
       option :client_options, {
         site: 'https://slack.com',
-        token_url: '/api/oauth.v2.access'
+        token_url: '/api/oauth.v2.access',
+        authorize_url: 'https://slack.com/oauth/v2/authorize',
       }
 
       option :auth_token_params, {
