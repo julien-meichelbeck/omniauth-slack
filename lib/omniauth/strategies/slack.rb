@@ -98,12 +98,6 @@ module OmniAuth
         return {} unless access_token.params.key? 'bot'
         access_token.params['bot']
       end
-
-      private
-
-      def callback_url
-        full_host + script_name + callback_path
-      end
     end
   end
 end
