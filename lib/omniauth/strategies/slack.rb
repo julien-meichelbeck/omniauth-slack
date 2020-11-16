@@ -11,8 +11,7 @@ module OmniAuth
 
       option :client_options, {
         site: 'https://slack.com',
-        token_url: '/api/oauth.v2.access',
-        authorize_url: 'https://slack.com/oauth/v2/authorize',
+        token_url: '/api/oauth.access'
       }
 
       option :auth_token_params, {
@@ -97,6 +96,12 @@ module OmniAuth
       def bot_info
         return {} unless access_token.params.key? 'bot'
         access_token.params['bot']
+      end
+
+      private
+
+      def callback_url
+        full_host + script_name + callback_path
       end
     end
   end
